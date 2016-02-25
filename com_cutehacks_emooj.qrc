@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/com/cutehacks/emooj">
+        <file>qmldir</file>
+        <file>EmojiView.qml</file>
+    </qresource>
+</RCC>

@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/com/cutehacks/emooj">
+        <file>assets/sheet_twitter_32.png</file>
+    </qresource>
+</RCC>
