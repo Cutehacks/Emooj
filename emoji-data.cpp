@@ -4,8 +4,8 @@
 
 namespace com { namespace cutehacks { namespace emooj {
 
-static const QString COPYRIGHT_SIGN(QStringLiteral("\U000000a9"));
-static const QString REGISTERED_SIGN(QStringLiteral("\U000000ae"));
+static const QString COPYRIGHT_SIGN(QStringLiteral("©"));
+static const QString REGISTERED_SIGN(QStringLiteral("®"));
 static const QString DOUBLE_EXCLAMATION_MARK(QStringLiteral("\U0000203c"));
 static const QString EXCLAMATION_QUESTION_MARK(QStringLiteral("\U00002049"));
 static const QString TRADE_MARK_SIGN(QStringLiteral("\U00002122"));
@@ -1016,18 +1016,18 @@ static const QString SCORPION(QStringLiteral("\U0001f982"));
 static const QString TURKEY(QStringLiteral("\U0001f983"));
 static const QString UNICORN_FACE(QStringLiteral("\U0001f984"));
 static const QString CHEESE_WEDGE(QStringLiteral("\U0001f9c0"));
-static const QString HASH_KEY(QStringLiteral("\U00000023\U000020e3"));
-static const QString KEYCAP_STAR(QStringLiteral("\U0000002a\U000020e3"));
-static const QString KEYCAP_0(QStringLiteral("\U00000030\U000020e3"));
-static const QString KEYCAP_1(QStringLiteral("\U00000031\U000020e3"));
-static const QString KEYCAP_2(QStringLiteral("\U00000032\U000020e3"));
-static const QString KEYCAP_3(QStringLiteral("\U00000033\U000020e3"));
-static const QString KEYCAP_4(QStringLiteral("\U00000034\U000020e3"));
-static const QString KEYCAP_5(QStringLiteral("\U00000035\U000020e3"));
-static const QString KEYCAP_6(QStringLiteral("\U00000036\U000020e3"));
-static const QString KEYCAP_7(QStringLiteral("\U00000037\U000020e3"));
-static const QString KEYCAP_8(QStringLiteral("\U00000038\U000020e3"));
-static const QString KEYCAP_9(QStringLiteral("\U00000039\U000020e3"));
+static const QString HASH_KEY(QStringLiteral("#\U000020e3"));
+static const QString KEYCAP_STAR(QStringLiteral("*\U000020e3"));
+static const QString KEYCAP_0(QStringLiteral("0\U000020e3"));
+static const QString KEYCAP_1(QStringLiteral("1\U000020e3"));
+static const QString KEYCAP_2(QStringLiteral("2\U000020e3"));
+static const QString KEYCAP_3(QStringLiteral("3\U000020e3"));
+static const QString KEYCAP_4(QStringLiteral("4\U000020e3"));
+static const QString KEYCAP_5(QStringLiteral("5\U000020e3"));
+static const QString KEYCAP_6(QStringLiteral("6\U000020e3"));
+static const QString KEYCAP_7(QStringLiteral("7\U000020e3"));
+static const QString KEYCAP_8(QStringLiteral("8\U000020e3"));
+static const QString KEYCAP_9(QStringLiteral("9\U000020e3"));
 static const QString REGIONAL_INDICATOR_SYMBOL_LETTERS_AC(QStringLiteral("\U0001f1e6\U0001f1e8"));
 static const QString REGIONAL_INDICATOR_SYMBOL_LETTERS_AD(QStringLiteral("\U0001f1e6\U0001f1e9"));
 static const QString REGIONAL_INDICATOR_SYMBOL_LETTERS_AE(QStringLiteral("\U0001f1e6\U0001f1ea"));

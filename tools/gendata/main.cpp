@@ -64,7 +64,11 @@ int main(int argc, char** argv)
             uint ucs4 = cp.toUInt(&ok, 16);
             if (ok) {
                 unicode = unicode % QString::fromUcs4(&ucs4, 1);
-                encoded = encoded % QString("\\U%1").arg(ucs4, 8, 16, QLatin1Char('0'));
+                if (ucs4 >= 0x100) { // Windows won't let us use universal characters for basic chars
+                    encoded = encoded % QString("\\U%1").arg(ucs4, 8, 16, QLatin1Char('0'));
+                } else {
+                    encoded = encoded % QString::fromUcs4(&ucs4, 1);
+                }
             }
         }
 
