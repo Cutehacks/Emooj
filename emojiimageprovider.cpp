@@ -43,4 +43,9 @@ QPixmap EmojiImageProvider::requestPixmap(const QString &id, QSize *size, const 
     return m_src.copy(x, y, SIZE, SIZE);
 }
 
+QString EmojiImageProvider::urlForCoords(int sheetX, int sheetY)
+{
+    return QString("image://com.cutehacks.emooj/%1/%2").arg(sheetX).arg(sheetY);
+}
+
 } } }

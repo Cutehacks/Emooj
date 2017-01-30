@@ -15,6 +15,9 @@ public:
 
 private:
     QPixmap m_src;
+
+public:
+    static QString urlForCoords(int sheetX, int sheetY);
 };
 
 } } }

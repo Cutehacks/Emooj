@@ -1,11 +1,17 @@
 // Copyright 2016 Cutehacks AS. All rights reserved.
 // License can be found in the LICENSE file.
+#include <QtGui/QGuiApplication>
+#include <QtGui/QInputMethodEvent>
+
 #include "emojidatamodel.h"
 #include "emoji-data.h"
+#include "emojiimageprovider.h"
 
 namespace com { namespace cutehacks { namespace emooj {
 
 static QHash<int, QByteArray> roles {
+    {Qt::DisplayRole,               "display"},
+    {Qt::DecorationRole,            "decoration"},
     {EmojiDataModel::UnicodeRole,   "unicode"},
     {EmojiDataModel::NameRole,      "name"},
     {EmojiDataModel::ShortNameRole, "shortName"},
@@ -60,7 +66,7 @@ QVariant EmojiDataModel::data(const QModelIndex &index, int role) const
     case SheetYRole:
         return data.sheetY;
     case Qt::DecorationRole:
-        // Image provider..
+        return EmojiImageProvider::urlForCoords(data.sheetX, data.sheetY);
         break;
     }
     return key;
@@ -70,6 +76,19 @@ QVariant EmojiDataModel::data(const QModelIndex &index, int role) const
 QHash<int, QByteArray> EmojiDataModel::roleNames() const
 {
     return roles;
+}
+
+void EmojiDataModel::emitIMEvent(int i)
+{
+    if (i >= 0 && i < emojis.length()) {
+        QString key = emojis[i];
+        Emoji data = emojiData[key];
+        QInputMethodEvent *e = new QInputMethodEvent(
+                    QString(),
+                    QList<QInputMethodEvent::Attribute>());
+        e->setCommitString(data.unicode);
+        qApp->sendEvent(qApp->focusObject(), e);
+    }
 }
 
 } } }

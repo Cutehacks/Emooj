@@ -22,21 +22,28 @@ Rectangle {
         anchors.margins: 10
 
         model: EmojiDataModel {
-
+            id: emojiModel
         }
 
         delegate: Rectangle {
             width: 32
             height: 32
 
-            Text {
-                anchors.fill: parent
-                text: unicode
-            }
-//            Image {
+//            Text {
 //                anchors.fill: parent
-//                source: "image://com.cutehacks.emooj/" + sheetX + "/" + sheetY
+//                text: unicode
 //            }
+            Image {
+                anchors.fill: parent
+                source: decoration
+            }
+
+            MouseArea {
+                anchors.fill: parent
+                onClicked: {
+                    emojiModel.emitIMEvent(index);
+                }
+            }
         }
     }
 

@@ -74,6 +74,7 @@ Window {
             left: parent.left
             right: sendButton.left
         }
+        focus: true
 
         ToolButton {
             id: openEmojis
@@ -102,13 +103,15 @@ Window {
         }
 
         onClicked: {
+            console.log(input.text)
             var item = {
                 original: input.text,
                 content: UnicodeUtils.replaceEmojis(input.text, function(emoji) {
+                    console.log(JSON.stringify(emoji, null, 4));
                     return "<img src=\"image://com.cutehacks.emooj/"
                             + emoji.sheetX + "/"
-                            + emoji.sheetY +
-                            "\" style=\"width:32; height:32\" >"
+                            + emoji.sheetY + "\"" +
+                            " style=\"width:20px; height:20px;\" >"
                 })
             };
             model.append(item);
